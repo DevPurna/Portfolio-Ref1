@@ -1,0 +1,110 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f1117;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  margin: 20px 0px 0px 20px;
+  max-width: 200px; /* limit width to prevent overflow */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  font-size: 18px;
+}
+.nav-connect {
+  padding: 10px 30px;
+  margin-right: 50px;
+  border-radius: 30px;
+  background: linear-gradient(267deg, #da7c25 0.36%, #b923e1);
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.nav-connect:hover {
+  transform: scale(1.05);
+}
+
+.nav-menu li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-menu li img {
+  display: flex;
+  margin: auto;
+}
+.nav-mob-close {
+  display: none;
+}
+.nav-mob-open {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px; /* instead of margin */
+    margin: 0; /* remove margin that caused overflow */
+    justify-content: space-between; /* keep name left & menu button right */
+  }
+
+  .navbar h1 {
+    font-size: 20px;
+    max-width: none;
+     /* let text fit naturally */
+  }
+
+  .nav-mob-open {
+    display: block;
+    position: relative; /* relative so it stays inside navbar */
+    right: 0;
+    width: 28px; /* adjust size for mobile */
+    cursor: pointer;
+    margin-right: 30px;
+  }
+
+  .nav-mob-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
+    gap: 30px;
+    background-color: #1f0016;
+    width: 280px; /* smaller for mobile */
+    height: 100%;
+    z-index: 2000;
+    transition: right 0.5s;
+    right: -280px;
+    padding-top: 60px; /* spacing under close button */
+  }
+
+  .nav-menu li {
+    font-size: 22px;
+    padding-left: 40px;
+    gap: 15px;
+  }
+  .nav-connect{
+    display: none;
+  }
+}

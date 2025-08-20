@@ -1,0 +1,105 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.hero h1 {
+  width: 70%;
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 50px;
+  line-height: 1.2; /* ✅ keeps text tighter */
+}
+
+.hero h1 span {
+  background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 60px;
+}
+
+.hero p {
+  width: 50%;
+  font-size: 22px;
+  line-height: 35px;
+  color: #ddd; /* ✅ softer text contrast */
+}
+
+.hero-action {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.hero-connect {
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-resume {
+  padding: 12px 20px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-connect:hover {
+  background: linear-gradient(264deg, #b415ff -5.09%, #df8908 100%);
+  border: 2px solid white;
+  transform: scale(1.05);
+}
+
+.hero-resume:hover {
+  border: 2px solid #df8908;
+  transform: scale(1.05);
+}
+
+/* ✅ Mobile View */
+@media (max-width: 768px) {
+  .hero {
+    gap: 25px;
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    width: 90%;
+    font-size: 32px; /* smaller for mobile */
+    margin-top: 20px;
+  }
+
+  .hero h1 span {
+    font-size: 38px; /* scale down gradient text */
+  }
+
+  .hero p {
+    width: 90%;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .hero-action {
+    flex-direction: column;
+    gap: 15px;
+    width: 90%; /* keep buttons aligned with text */
+  }
+
+  .hero-connect,
+  .hero-resume {
+    width: 40%; /* ✅ full width for mobile buttons */
+    text-align: center;
+    font-size: 18px; /* more natural on mobile */
+    padding: 14px 0;
+  }
+}
